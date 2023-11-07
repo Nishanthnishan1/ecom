@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration </title>
+    <!--<link rel="stylesheet" href="static/images/patient.css">-->
+
+    <style>
+    body {
+  background: #3CC;
+   }
+   #logbox{
+  padding: 10px;
+  margin: 50px auto;
+  width: 340px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+h1 {
+  text-align: center;
+  font-size: 175%;
+  color: #757575;
+  font-weight: 300;
+}
+h1, input {
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+
+.input {
+  width: 75%;
+  display: block;
+  margin: 0 auto 15px;
+  padding: 0 15px;
+  border: none;
+
+}
+.input:focus {
+  outline: none;
+  border-bottom-color: #3CC !important;
+}
+.input:hover {
+  border-bottom-color: #dcdcdc;
+}
+.input:invalid {
+  box-shadow: none;
+}
+
+.pass:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+.inputButton {
+  position: relative;
+  width: 95%;
+  height: 60px;
+  display: block;
+  margin: 30px auto 30px;
+  color: white;
+  background-color: #3CC;
+  border: none;
+
+  -moz-box-shadow: 0 5px 0 #2CADAD;
+  box-shadow: 0 5px 0 #2CADAD;
+}
+.inputButton:hover {
+  top: 2px;
+  -webkit-box-shadow: 0 3px 0 #2CADAD;
+  -moz-box-shadow: 0 3px 0 #2CADAD;
+  box-shadow: 0 3px 0 #2CADAD;
+}
+.inputButton:active {
+  top: 5px;
+  box-shadow: none;
+}
+.inputButton:focus {
+  outline: none;
+}
+
+
+    </style>
+</head>
+<body>
+ <!--<img src="images/slide-one.jpg" style="width: 70px; height: 70px" align="right">-->
+<form method="POST" >
+    {% csrf_token %}
+<h1> Registraion</h1>
+    <br>
+
+  
+
+       <div class="col-md-6">
+           <div id="logbox">
+
+    <label for="Uname" class="input pass " > Name: <span style="color: #FF6347">*</span></label><br>
+    <input id="Uname" type="text" name="Uname" required style="border: solid 1px;margin-left:10px">
+    <br><br>
+
+
+     <label for="address" style="margin-left: 10px;" class="input pass " > Address:</label><br>
+    <input type="text" id="address" name="address">
+    <br><br>
+     <label for="age" style="margin-left: 10px;" class="input pass">  Age:</label><br>
+    <input type="text" id="age" name="age">
+    <br><br>
+     <label for="contact" style="margin-left: 10px;" class="input pass "> Contact Number:</label><br>
+    <input type="text" id="contact" name="ontact">
+    <br><br>
+
+     <label for="mail" style="margin-left: 10px;" class="input pass "> mail:</label><br>
+    <input type="text" id="mail" name="mail">
+
+    <br><br>
+     
+    <label for="username" style="margin-left: 10px;" class="input pass "> UserName</label><br>
+    <input type="text" id="username" name="username">
+    <br><br>
+      <label for="password" style="margin-left: 10px;" class="input pass "> Password</label><br>
+    <input type="password" id="password" name="password">
+    <br><br>
+
+
+<!-- SUBMIT AND RESET INFO -->
+<button type="submit"  name="submit" style="margin-left: 10px" class="inputButton">REGISTER</button>
+<!--<button type="submit" id="reset" name="register" style="margin-left: 10px">RESET</button>-->
+
+        </div>
+
+    </div>
+</form>
+</body>
+</html>

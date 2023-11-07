@@ -1,0 +1,171 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    
+
+    <!-- Favicon  -->
+    <link rel="icon" href="{% static 'cr/img/core-img/favicon.ico' %}">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="{% static 'cr/css/core-style.css' %}">
+    <link rel="stylesheet" href="{% static 'cr/style.css'%}">
+
+    <!-- Responsive CSS -->
+    <link href="{% static 'cr/css/responsive.css'%}" rel="stylesheet">
+
+</head>
+<body>
+     
+        
+
+        <!-- ****** New Arrivals Area Start ****** -->
+        <section class="new_arrivals_area section_padding_100_0 clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_heading text-center">
+                            <h2>Shopping Blog</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="karl-projects-menu mb-100">
+                <div class="text-center portfolio-menu">
+                    <button class="btn active" data-filter="*">CART ITMES</button>
+                    
+                </div>
+            </div>
+
+
+
+            <div class="container">
+                <div class="row karl-new-arrivals">
+<!---------------------------------------------------------------------------------------------------------------------------->
+                    <!-- Single gallery Item Start -->
+                    <div class="col-12 col-sm-6 col-md-4 single_gallery_item women wow fadeInUpBig" data-wow-delay="0.2s">
+                        <!-- Product Image -->
+{% for i in ci %}
+                        <div class="product-img">
+                           <img src="{{i.prodt.img.url}}" alt="{{i.prodt.name}}">
+                            <div class="product-quicview">
+                                <a href="{{i.prodt.get_url}}" data-toggle="modal" data-target="#quickview"><i class="ti-plus"></i></a>
+                            </div>
+                        </div>
+                        <!-- Product Description -->
+                        <div class="product-description">
+                            
+                            <h4 class="product-price">ID: {{i.prodt.id}}</h4>
+                            <p>PRICE :{{i.prodt.price}}$ <br><a href="{% url 'remove' i.prodt.id %}">Delete</a><a href="{% url 'addcart' i.prodt.id %}"><i class="fa fa-plus" style="font-size:15px"></i></a>{{i.quan}}<a href="{% url 'cart_decrement' i.prodt.id %}"><i class="fa fa-minus" style="font-size:15px"></i></a></p>
+                            <p>{{i.prodt.desc}}</p>
+                            <p>QTY :{{i.quan}}</p>
+                            <br><br>
+{% endfor %}
+<!---------------------------------------------------------------------------------------------------------------------------------->
+                    
+                    
+                    
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="{% static 'cr/js/jquery/jquery-2.2.4.min.js'%}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'cr/js/popper.min.js'%}"></script>
+    
+    <!-- Bootstrap js -->
+    <script src="{% static 'cr/js/bootstrap.min.js' %}"></script>
+    <!-- Plugins js -->
+    <script src="{% static 'cr/js/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'cr/js/active.js' %}"></script>
+
+</body>
+</html>
+{% endblock %}
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<style>  
+body{  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: pink;  
+}  
+.container {  
+    padding: 50px;  
+  background-color: lightblue;  
+}  
+  
+input[type=text], input[type=password], textarea {  
+  width: 100%;  
+  padding: 15px;  
+  margin: 5px 0 22px 0;  
+  display: inline-block;  
+  border: none;  
+  background: #f1f1f1;  
+}  
+input[type=text]:focus, input[type=password]:focus {  
+  background-color: orange;  
+  outline: none;  
+}  
+ div {  
+            padding: 10px 0;  
+         }  
+hr {  
+  border: 1px solid #f1f1f1;  
+  margin-bottom: 25px;  
+}  
+.registerbtn {  
+  background-color: #4CAF50;  
+  color: white;  
+  padding: 16px 20px;  
+  margin: 8px 0;  
+  border: none;  
+  cursor: pointer;  
+  width: 100%;  
+  opacity: 0.9;  
+}  
+.registerbtn:hover {  
+  opacity: 1;  
+}  
+</style>  
+</head>  
+<body>  
+<form>  
+  <div class="container">  
+  <center> <h1>  Register</h1> </center>  
+  <hr>  
+  <label> Firstname </label>   
+<input type="text" name="firstname" placeholder= "Firstname" size="15" required />   
+ 
+<label> Lastname: </label>    
+<input type="text" name="lastname" placeholder="Lastname" size="15"required />   
+<div>  
+
+  <label> Username: </label>    
+<input type="text" name="lastname" placeholder="Username" size="15"required />   
+<div>  
+   
+  
+
+  <label for="email"><b>Email</b></label>  
+  <input type="password" placeholder="Enter email" name="psw" required> 
+
+    <label for="psw"><b>Password</b></label>  
+    <input type="password" placeholder="Enter Password" name="psw" required>  
+  
+    <label for="psw-repeat"><b>Re-type Password</b></label>  
+    <input type="password" placeholder="Retype Password" name="psw-repeat" required>  
+    <button type="submit" class="registerbtn">Register</button>    
+</form>  
+</body>  
+</html>
